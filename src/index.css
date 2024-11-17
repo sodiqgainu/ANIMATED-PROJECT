@@ -5,3 +5,8 @@
 *{
   cursor: none;
 }
+
+@font-face{
+  font-family: berisa;
+  src: url('/assets/fonts/berisa/berisa-regular.otf');
+}

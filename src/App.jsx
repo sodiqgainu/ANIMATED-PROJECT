@@ -5,6 +5,9 @@ import TextPlugin from 'gsap/TextPlugin'
 gsap.registerPlugin(TextPlugin)
 import './App.css'
 import Navbar from './components/navbar/Navbar'
+import Section1 from './components/section1/Section1'
+import Section2 from './components/section2/Section2'
+import Section3 from './components/section3/Section3'
 
 const App = () => {
 
@@ -29,11 +32,13 @@ const toggleTheme = () => {
   
 
   return (
-    <div className={` h-screen ${themeToggle ? 'bg-black text-white' : 'bg-white text-black'}`} >
+    <div className={` transition-all duration-300 h-full ${themeToggle ? 'bg-black text-white ' : 'bg-white text-black'}`} >
 
-    <div className='main'>
+    <div className='main '>
       <Navbar toggleTheme={toggleTheme} themeToggle={themeToggle} />
-
+      <Section1 themeToggle={themeToggle} />
+      <Section2 themeToggle={themeToggle}/>
+      <Section3 themeToggle={themeToggle}/>
     </div>
    
 

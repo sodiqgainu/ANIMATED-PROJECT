@@ -10,29 +10,38 @@ const Navbar = ({toggleTheme, themeToggle}) => {
 
 const navLine = useRef()
 
+
 useGSAP(()=>{
-  const tl = gsap.timeline()
-  .to(navLine.current,{
+
+  gsap.from('.nav',{
+        perspective:'500px',
+        y:'300px',
+        z:5,
+        duration:2,
+  })
+  gsap.to(navLine.current,{
     width:'100%',
     duration:2
   })
+
+  
 })
 
   return (
     <>
-    <div className='flex justify-between px-6 py-5 items-center' >
-        <div className= 'flex  items-center lg:text-[2vw] text-2vw font-bold'>
+    <div className='flex justify-between px-6 py-5 items-center overflow-hidden' >
+        <div className= 'flex  items-center lg:text-[2vw] text-2vw font-bold nav' >
             <h1>DEv.sordman </h1>
             <FaPerson/>
         </div>
 
-        <div className='list-none flex items-center gap-[2rem]'>
+        <div className='list-none flex items-center gap-[2rem] nav' >
           <li><a href="">About </a></li>
           <li><a href=""> Service </a></li>
           <li><a href=""> Blog</a></li>
         </div>
 
-        <div>
+        <div className='nav'>
           {
             themeToggle?<FaMoon onClick={toggleTheme}/>:<FaSun onClick={toggleTheme}/>
           }
